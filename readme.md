@@ -8,7 +8,7 @@
 
 - setup jwt-secret for process.env.JWT_KEY to run properly
 - setup stripe-secret as STRIPE_KEY (lecture 436)
-- kubectl create secret generic jwt-secret --from-literal JWT_KEY=(insert key)
+- kubectl create secret generic jwt-secret --from-literal=JWT_KEY=(insert key)
 - if using this as a template, change NATS_CLUSTER_ID in .depl files
 
 ## Common @etytickets/common
