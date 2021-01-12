@@ -5,9 +5,14 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/use-regex: 'true'
+    cert-manager.io/cluster-issuer: 'letsencrypt-prod'
 spec:
+  tls:
+    - hosts:
+        - www.tetsudoeki.com
+      secretName: tickets-tls
   rules:
-    - host: tetsudoeki.com
+    - host: www.tetsudoeki.com
       http:
         paths:
           - path: /api/users/?(.*)
